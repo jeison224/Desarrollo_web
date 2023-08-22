@@ -1,0 +1,69 @@
+class animal {
+    constructor(raza, color, sonido, habitat){
+        this.raza=raza;
+        this.color=color;
+        this.sonido=sonido;
+        this.habitat=habitat
+    }
+    moverse(tipomovimiento){
+        console.log(`mi movimiento es' ${tipomovimiento}`);
+    }
+    determinarespecie(){
+        return this.especie
+    }
+    sonidocarateristico(){
+        return this.sonido
+    }
+    dondeseencuentra(){
+        return this.habitat
+    }
+}
+
+class perro extends animal{
+    constructor(raza, color, sonido){
+        super(raza,color,sonido,'casa');
+    }
+
+    ladrar() {
+        return this.sonido
+    }
+    sentarse(){
+        console.log('recibido')
+    }
+}
+
+const labrador = new perro('labrador','blanco','woof')
+labrador.sentarse()
+console.log(labrador.sonidocarateristico())
+
+//clase que reciben objetos
+class musica{
+    constructor(info){
+        this.fechalanzamiento = info.fechalanzamiento;
+        this.artista= info.artista;
+        this.genero = info.genero;
+        this.titulo = info.titulo
+    }
+    reproducir(){
+        console.log(`se esta reproduciendo ${this.titulo} del artista ${this.artista}`)
+
+    }
+    pausar(){
+        return `se ha pausado ${this.titulo} del artista ${this.artista}`
+    }
+}
+const informacion ={
+    fechalanzamiento: 2004,
+    artista: 'eminem',
+    genero: 'rap',
+    titulo: 'The Real Slim Shady'
+}
+const Rap = new musica(
+    {
+    fechalanzamiento: 2020,
+    artista: 'Eladio',
+    genero: 'Trap',
+    titulo: 'Hug?'
+    }
+);
+Rap.reproducir();
